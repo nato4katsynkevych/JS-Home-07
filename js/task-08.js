@@ -23,45 +23,25 @@ const boxRef = document.querySelector('#boxes');
 const renderRef = document.querySelector('[data-action="render"]');
 const destroyRef = document.querySelector('[data-action="destroy"]');
 
-
-
-
-// console.log(boxRef);
-// console.log(renderRef);
-// console.log(destroyRef);
-
 renderRef.addEventListener('click', onRenderClick);
 destroyRef.addEventListener('click', destroyBoxes);
 
 function onRenderClick(e) {
 	boxRef.innerHTML = '';
 	const boxes = [];
-	// console.log(inputRef.value);
 	const amount = inputRef.value;
-	// const amount = inputRef.value;
-	// console.log(amount);
 	let size = 20;
 	for (let index = 1; index <= amount; index++) {
 
 		size += 10;
-		// console.log(size);
-		boxes.push(` <div class ="elem" width="${size} px"  hight="${size} px"> qwerty </div>`);
-		// console.log(boxes.join(''));
-		// console.log(boxes);
+		boxes.push(`<div class="elem" style = " width : ${size}px; height : ${size}px; background-color: tomato "> </div>
+		</div>`);
 	}
 
 	boxRef.insertAdjacentHTML('beforeend', boxes.join(""));
-	// boxRef.append(boxes.join(""));
-	// boxRef.innerHTML='';
+
 	inputRef.value = 0;
-	// boxRef.innerHTML='';
-
 }
-
-// function createBoxes(e) {
-// 	return ` <div class ='elem' width=${size}px  hight=${size}px> qwerty
-// </div>`
-// };
 
 function destroyBoxes() {
 	boxRef.innerHTML = '';
